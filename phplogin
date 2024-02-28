@@ -1,0 +1,109 @@
+<?php
+include ("conect.php");
+ini_set('display_errors',1);
+ini_set('display_startup_erros',1);
+error_reporting(E_ALL);
+    // Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+?>
+<!DOCTYPE html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title></title>
+</head>
+<body onload="Tempo()"></body>
+</html>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes">
+<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div><center>
+    <img alt="" src="x.jpg" style="width:200px; height: 200px;">
+</div>
+
+<center>
+    <div class ="container">
+    <div class="row"></div>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-5">
+                <form action="" method="POST" >
+                    <div class="input-group">
+                        <label for="USUARIO">USUARIO</label>
+                        <input type="text" class="form-control" name="USUARIO" autofocus  required><br><br>
+                        <label for="Senha">SENHA:</label>
+                        <input type="password" class="form-control" name="SENHA" autofocus required ><br><br><br>
+                        <button type="submit" class="btn btn-lg btn-default">Entrar</button><p><p><p><p>
+                        <input type= "hidden" name="entrar" value="login">
+                        </div>
+                        </form>
+<h3>É novo aqui?Cadastre-se</h3>
+</div>
+<style>
+    .myButton {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+</style>
+<br>
+<form>
+<div align="center">
+<a href="https://html" type="button" class="myButton">CADASTRO</a>
+</form>
+<br>
+</html>
+
+<?php
+// Turn off error reporting
+error_reporting(1);
+
+// Report runtime errors
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
+// Report all errors
+error_reporting(E_ALL);
+
+// Same as error_reporting(E_ALL);
+ini_set("error_reporting", E_ALL);
+
+// Report all errors except E_NOTICE
+error_reporting(E_ALL & ~E_NOTICE);
+    // Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+    $USUARIO=$_POST['USUARIO'];
+    $SENHA=$_POST['SENHA'];
+  var_dump($USUARIO);
+  var_dump($SENHA);
+$query =("SELECT USUARIO, SENHA * FROM LOGIN WHERE USUARIO ='$USUARIO' AND SENHA='$SENHA'");
+$result = mysqli_query($query);
+       
+        
+    
+
+
+
